@@ -6,11 +6,22 @@
 </template>
 
 <script>
+// import request from "../api/matches/index";
+export default {
+  data() {
+    return {};
+  },
+  created() {
+    // request.matches();
+    console.log(this.$api.project.project_get());
+  }
+};
 </script>
 
 <style>
 .index {
   height: 100%;
+  min-height: 400px;
   flex: 1;
   background-color: blue;
   margin: 50px !important;
