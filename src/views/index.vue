@@ -115,11 +115,12 @@ export default {
       // EventBus.$emit("exportData", this.hotSettings.data);
       console.log("-----------xxxxxxxxxxaaaaaaaa", onlyData);
       // var self = this;
-      var _data = [
-        ["id", "name", "value"],
-        [1, "sheetjs", 7262],
-        [2, "js-xlsx", 6969]
-      ];
+      // var _data = [
+      //   ["id", "name", "value","hei"],
+      //   [1, "sheetjs", 7262],
+      //   [2, "js-xlsx", 6969]
+      // ];
+      let _data = onlyData;
       var worksheet = XLSX.utils.aoa_to_sheet(_data);
       var new_workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(
