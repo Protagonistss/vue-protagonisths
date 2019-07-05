@@ -1,5 +1,5 @@
 # vue-protagonisths
-
+> 此分支为实验分支
 ## Project setup
 
 ```
@@ -24,7 +24,8 @@ npm run test
 npm run lint
 ```
 
-### 添加 vuex 中小型项目不推荐 vuex,坑比较多,可以使用 eventBus
+### 添加 vuex 中小型项目不推荐 vuex,坑比较多
+> 友情提示,涉及到组件传值的问题可以考虑eventBus.
 
 ```
 vue add vuex
