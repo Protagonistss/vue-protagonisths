@@ -1,12 +1,14 @@
-let baseUrl = "";
-if (process.env.NODE_ENV == "development") {
-  baseUrl = "http://127.0.0.1:8005";
-} else if (process.env.NODE_ENV == "production") {
-  // 比如说是线上
-  baseUrl = "http://host:port";
-} else {
-  // 可以是其他环境的
-  baseUrl = "";
+let BASR_URL = null;
+switch (process.env.NODE_ENV) {
+  case "development":
+    BASR_URL = process.env.VUE_APP_BASR_URL;
+    break;
+  case "production":
+    BASR_URL = process.env.VUE_APP_BASR_URL;
+    break;
+  default:
+    BASR_URL = null;
+    break;
 }
 
-export { baseUrl };
+export { BASR_URL };
