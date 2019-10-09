@@ -7,8 +7,8 @@
 
 <style>
 .header {
-  height: 50px;
+  height: 80px;
   width: 100%;
-  background-color: aqua;
+  background-color: #f56c6c;
 }
 </style>
