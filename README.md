@@ -24,7 +24,7 @@ npm run test
 npm run lint
 ```
 
-### 添加 vuex 中小型项目不推荐 vuex,坑比较多,可以使用 eventBus
+### 添加 vuex 中小型项目不推荐 vuex,坑比较多
 
 ```
 vue add vuex
