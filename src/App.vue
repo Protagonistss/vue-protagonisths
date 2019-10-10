@@ -25,7 +25,7 @@ html,
 body {
   min-width: 1366px !important;
   min-height: 668px !important;
-  background-color: whitesmoke !important;
+  background-color: #fff !important;
   display: flex;
   flex-direction: column;
 }

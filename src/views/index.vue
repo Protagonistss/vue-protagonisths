@@ -11,9 +11,12 @@ export default {
   data() {
     return {};
   },
-  created() {
+  async created() {
     // request.matches();
-    console.log(this.$api.project.project_get());
+    let params = {};
+    let data = { email: "string", password: "string", user_name: "string" };
+    let res = await this.$api.project.project_post(params, data);
+    console.log(res);
   }
 };
 </script>

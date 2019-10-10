@@ -5,7 +5,7 @@ let service = axios.create({
   // headers: {'Content-Type': 'application/json'},
   timeout: 60000
 });
-
+axios.defaults.withCredentials = true
 // 设置 post、put 默认 Content-Type
 service.defaults.headers.post["Content-Type"] = "application/json";
 service.defaults.headers.put["Content-Type"] = "application/json";
@@ -14,7 +14,7 @@ service.defaults.headers.put["Content-Type"] = "application/json";
 service.interceptors.request.use(
   config => {
     if (config.method === "post" || config.method === "put") {
-      // post、put 提交时，将对象转换为string, 为处理Java后台解析问题
+      // post、put 提交时，将对象转换为string, 为处理后台解析问题
       config.data = JSON.stringify(config.data);
     }
     // 请求发送前进行处理
