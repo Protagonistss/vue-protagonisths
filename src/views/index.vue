@@ -13,10 +13,12 @@ export default {
   },
   async created() {
     // request.matches();
-    let params = {}
+    // let params = {}
     let data = { email: 'string3', password: 'string3', user_name: 'string3' }
-    let res = await this.$api.project.project_post(params, data)
-    console.log(res)
+    // let res = await this.$api.project.project_post(params, data)
+    // console.log(res)
+    let query = 1
+    this.$api.user.user_put(query, data)
   }
 }
 </script>
