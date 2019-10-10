@@ -1,2 +1,2 @@
 # TODO
-FROM baseImage
+FROM nginx
