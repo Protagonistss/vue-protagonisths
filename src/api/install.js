@@ -1,4 +1,4 @@
-import allApi from "./allApiRegister";
+import allApi from "./register";
 
 const install = function(Vue) {
   if (install.installed) {

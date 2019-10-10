@@ -1,4 +1,4 @@
-import api from "../baseMethodsFilter";
+import api from "../base";
 import urls from "./urls";
 
 const header = {};
