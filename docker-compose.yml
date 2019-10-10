@@ -1,1 +1,12 @@
-# TODO
+version: '3'
+services:
+  web:
+    build: .
+    image: 'chat'
+    restart: always
+    ports:
+      - '9100:9100'
+    volumes:
+      - logvolume01:/var/log
+volumes:
+  logvolume01: {}

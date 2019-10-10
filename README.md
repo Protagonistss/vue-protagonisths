@@ -51,3 +51,17 @@ npm run build
 ```
 
 > 具体的配置可以查看.env.build .env.buildpublic package.json 文件
+
+### About Docker
+
+- docker build image
+
+```
+docker build -t chat-test .
+```
+
+- docker run container
+
+```
+docker run -p 9100:9100 -d --name chat chat
+```
