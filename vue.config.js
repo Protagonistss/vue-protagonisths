@@ -2,18 +2,21 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 module.exports = {
   publicPath: './',
+  outputDir: 'dist',
+  productionSourceMap: false,
   chainWebpack: config => {
-    // if (process.env.NODE_ENV === 'production') {
-    //   if (process.env.npm_config_report) {
-    //     config
-    //       .plugin('webpack-bundle-analyzer')
-    //       .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
-    //       .end()
-    //     config.plugins.delete('prefetch')
-    //   }
-    // }
-    // config.plugins.delete('prefetch')
+    // 生成report
+    if (process.env.NODE_ENV === 'production') {
+      if (process.env.npm_config_report) {
+        config
+          .plugin('webpack-bundle-analyzer')
+          .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+          .end()
+        config.plugins.delete('prefetch')
+      }
+    }
     // 解决ie11兼容ES6
+    // 生产环境是否生成 sourceMap 文件
     config.entry('main').add('babel-polyfill')
     // 开启图片压缩
     // config.module
