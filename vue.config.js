@@ -1,4 +1,5 @@
 const CompressionPlugin = require('compression-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 module.exports = {
   publicPath: './',
   chainWebpack: config => {
@@ -11,16 +12,16 @@ module.exports = {
     //     config.plugins.delete('prefetch')
     //   }
     // }
-    config.plugins.delete('prefetch')
+    // config.plugins.delete('prefetch')
     // 解决ie11兼容ES6
     config.entry('main').add('babel-polyfill')
     // 开启图片压缩
-    config.module
-      .rule('images')
-      .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-      .use('image-webpack-loader')
-      .loader('image-webpack-loader')
-      .options({ bypassOnDebug: true })
+    // config.module
+    //   .rule('images')
+    //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+    //   .use('image-webpack-loader')
+    //   .loader('image-webpack-loader')
+    //   .options({ bypassOnDebug: true })
     // 开启js、css压缩
     if (process.env.NODE_ENV === 'production') {
       config.plugin('compressionPlugin').use(
@@ -32,6 +33,25 @@ module.exports = {
       )
     }
   },
+  configureWebpack: config => {
+    if (process.env.NODE_ENV === 'production') {
+      // 为生产环境修改配置...
+      config.plugins.push(
+        //生产环境自动删除console
+        new UglifyJsPlugin({
+          uglifyOptions: {
+            compress: {
+              drop_debugger: true,
+              drop_console: true
+            }
+          },
+          sourceMap: false,
+          parallel: true
+        })
+      )
+    }
+  },
+
   transpileDependencies: [
     'biyi-admin' // 指定对第三方依赖包进行babel-polyfill处理
   ]
