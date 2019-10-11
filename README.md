@@ -65,3 +65,10 @@ docker build -t chat-test .
 ```
 docker run -p 9100:9100 -d --name chat chat
 ```
+
+### Dependency
+
+```
+npm install --save-dev image-webpack-loader
+npm install --save-dev compression-webpack-plugin
+```
