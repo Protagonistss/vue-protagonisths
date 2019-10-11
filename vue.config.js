@@ -24,6 +24,15 @@ module.exports = {
     //   .options({ bypassOnDebug: true })
     // 开启js、css压缩
     if (process.env.NODE_ENV === 'production') {
+      // 删除预加载
+      config.plugins.delete('preload')
+      config.plugins.delete('prefetch')
+      // 压缩代码
+      config.optimization.minimize(true)
+      // 分割代码
+      config.optimization.splitChunks({
+        chunks: 'all'
+      })
       config.plugin('compressionPlugin').use(
         new CompressionPlugin({
           test: /\.js$|\.html$|.\css/, // 匹配文件名
