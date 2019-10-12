@@ -69,9 +69,9 @@ docker run -p 9100:9100 -d --name chat chat
 ### Dependency
 
 ```
-npm install uglifyjs-webpack-plugin
-npm install --save-dev image-webpack-loader
-npm install --save-dev compression-webpack-plugin
+1. cnpm install compression-webpack-plugin
+2. cnpm install uglifyjs-webpack-plugin
+cnpm install --save-dev image-webpack-loader
 ```
 
 ### 查看 reprot

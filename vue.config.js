@@ -1,6 +1,8 @@
 const CompressionPlugin = require('compression-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 module.exports = {
+  //TODO: 图片路径统一
+  //TODO: 路径封装
   publicPath: './',
   outputDir: 'dist',
   productionSourceMap: false,
@@ -47,7 +49,6 @@ module.exports = {
   },
   configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
-      // 为生产环境修改配置...
       config.plugins.push(
         //生产环境自动删除console
         new UglifyJsPlugin({
@@ -65,6 +66,6 @@ module.exports = {
   },
 
   transpileDependencies: [
-    'biyi-admin' // 指定对第三方依赖包进行babel-polyfill处理
+    // 指定对第三方依赖包进行babel-polyfill处理
   ]
 }
